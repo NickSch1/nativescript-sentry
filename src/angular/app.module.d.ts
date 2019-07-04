@@ -1,7 +1,10 @@
-import { InjectionToken, ModuleWithProviders } from '@angular/core';
+import { InjectionToken, ModuleWithProviders, Provider } from '@angular/core';
 import { SentryErrorHandler } from './error.handler';
 export interface SentryConfig {
-  dsn: string;
+  sentryServiceProvider?: Provider;
+  config?: {
+    dsn: string;
+  };
 }
 export declare const SentryService: InjectionToken<SentryConfig>;
 export declare class SentryModule {
